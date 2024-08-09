@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .logos {
+        @apply h-8 w-auto;
+    }
+
+    .card {
+        @apply p-10  bg-[#232627] border border-solid border-[#343839] rounded-3xl max-w-6xl w-full; 
+    }
+}
