@@ -104,7 +104,7 @@ export const Testimonials = () => {
     <section>
       <div className="lg:px-20 md:px-16 sm:px-6 px-4 mt-36">
         <h1 className="text-center text-[#fefefe] text-5xl font-bold leading-[56px] tracking-[-0.03em]">We are building AI with feedback <br /> from the best devs in the world</h1>
-        <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[738px] overflow-hidden">
+        <div className="flex flex-col md:flex-row lg:flex-row justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[738px] overflow-hidden">
           <TestimonialsColumn testimonials={firstColumn} duration={25} />
           <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={36} />
           <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={30} />
