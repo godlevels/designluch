@@ -41,8 +41,12 @@ export const ProductShowcase = () => {
     <section className=''>
       <div className='lg:px-20 md:px-16 sm:px-6 px-4 mt-36'>
         <div>
-          <h1 className='text-[#fefefe] text-5xl text-center font-bold leading-[3.5rem] tracking-[-0.03em]'>Unlike any coding tool <br /> you've ever encountered</h1>
-          <p className='text-lg text-[#6C7275] text-center font-semibold leading-8 tracking-[-0.03em] py-4'>Actually, we're not so different from other coding platforms. <br /> But with AI, do you catch our drift? Exactly, that's the point.</p>
+          <h1 className='text-[#fefefe] text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center font-bold leading-[2.5rem] sm:leading-[3rem] md:leading-[3.5rem] lg:leading-[4rem] tracking-[-0.03em]'>
+            Unlike any coding tool <br /> you've ever encountered
+          </h1>
+          <p className='text-base sm:text-lg md:text-xl text-[#6C7275] text-center font-semibold leading-6 sm:leading-7 md:leading-8 tracking-[-0.03em] py-2 sm:py-3 md:py-4'>
+            Actually, we're not so different from other coding platforms. <br /> But with AI, do you catch our drift? Exactly, that's the point.
+          </p>
         </div>
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 place-items-center mt-7">
           {products.map(({ imageSrc, title, description, cardStyle }) => (

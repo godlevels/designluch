@@ -1,7 +1,10 @@
 /* eslint-disable react/jsx-key */
-"use client"
+"use client";
 import React from "react";
-import avatar1 from "@/assets/avatar-1.png"; 
+import Image from "next/image";
+import { motion } from "framer-motion";
+
+import avatar1 from "@/assets/avatar-1.png";
 import avatar2 from "@/assets/avatar-2.png";
 import avatar3 from "@/assets/avatar-3.png";
 import avatar4 from "@/assets/avatar-4.png";
@@ -10,9 +13,6 @@ import avatar6 from "@/assets/avatar-6.png";
 import avatar7 from "@/assets/avatar-7.png";
 import avatar8 from "@/assets/avatar-8.png";
 import avatar9 from "@/assets/avatar-9.png";
-import Image from "next/image";
-import { motion } from "framer-motion";
-
 
 const testimonials = [
   {
@@ -75,14 +75,17 @@ const firstColumn = testimonials.slice(0, 3);
 const secondColumn = testimonials.slice(3, 6);
 const thirdColumn = testimonials.slice(6, 9);
 
-
 const TestimonialsColumn = (props: { className?: string; testimonials: typeof testimonials; duration?: number }) => (
-  <div className="props.className">
-    <motion.div animate={{translateY:'-50%',}} transition={{duration: props.duration || 10, repeat:Infinity, ease:"linear", repeatType:"loop"}} className="flex flex-col gap-6 pb-6 ">
+  <div className={props.className}>
+    <motion.div
+      animate={{ translateY: "-50%" }}
+      transition={{ duration: props.duration || 10, repeat: Infinity, ease: "linear", repeatType: "loop" }}
+      className="flex flex-col gap-6 pb-6"
+    >
       {[...new Array(2)].fill(0).map((_, index) => (
         <React.Fragment key={index}>
           {props.testimonials.map(({ text, imageSrc, name, username }) => (
-            <div className="card">
+            <div key={username} className="card">
               <div className="text-white text-lg text-left font-medium leading-8 tracking-[-0.03em]">{text}</div>
               <div className="flex items-center gap-2 mt-5">
                 <Image src={imageSrc} alt={name} width={40} height={40} className="h-10 w-10 rounded-full" />
@@ -97,17 +100,19 @@ const TestimonialsColumn = (props: { className?: string; testimonials: typeof te
       ))}
     </motion.div>
   </div>
-)
+);
 
 export const Testimonials = () => {
   return (
     <section>
       <div className="lg:px-20 md:px-16 sm:px-6 px-4 mt-36">
-        <h1 className="text-center text-[#fefefe] text-5xl font-bold leading-[56px] tracking-[-0.03em]">We are building AI with feedback <br /> from the best devs in the world</h1>
+        <h1 className="text-center text-[#fefefe] text-3xl sm:text-4xl lg:text-5xl font-bold leading-[40px] sm:leading-[48px] lg:leading-[56px] tracking-[-0.03em]">
+          We are building AI with feedback <br className="hidden sm:block" /> from the best devs in the world
+        </h1>
         <div className="flex flex-col md:flex-row lg:flex-row justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[738px] overflow-hidden">
-          <TestimonialsColumn testimonials={firstColumn} duration={25} />
-          <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={36} />
-          <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={30} />
+          <TestimonialsColumn testimonials={firstColumn} className="w-full md:w-1/2 lg:w-1/3" duration={25} />
+          <TestimonialsColumn testimonials={secondColumn} className="hidden md:block md:w-1/2 lg:w-1/3" duration={36} />
+          <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block lg:w-1/3" duration={30} />
         </div>
       </div>
     </section>

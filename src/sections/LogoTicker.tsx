@@ -11,7 +11,8 @@ import { motion } from "framer-motion"
 export const LogoTicker = () => {
   return (
     <div className="py-6">
-      <h1 className="text-[#fefefe] text-5xl text-center font-bold leading-[3.50rem] tracking-[-0.03em] py-8">Our Clients</h1>
+      <h1 className="text-[#fefefe] text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center font-bold leading-[2.5rem] sm:leading-[3rem] md:leading-[3.5rem] lg:leading-[4rem] tracking-[-0.03em] py-4 sm:py-6 md:py-8">Our Clients</h1>
+
       <div className="lg:px-20 md:px-16 sm:px-6 px-4">
         <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black,transparent)]">
           <motion.div className="flex gap-6 flex-none items-center pr-6" animate={{translateX: '-50%'}} transition={{duration: 20, repeat:Infinity, ease:"linear", repeatType:"loop"}}>
